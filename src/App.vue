@@ -6,17 +6,20 @@
         <router-view></router-view>
       </v-container>
     </v-main>
+    <TheFooter />
   </v-app>
 </template>
 
 <script>
 import TheHeader from '@/layout/TheHeader';
+import TheFooter from '@/layout/TheFooter';
 
 export default {
   name: 'App',
 
   components: {
-    TheHeader
+    TheHeader,
+    TheFooter
   },
 
   data: () => ({
