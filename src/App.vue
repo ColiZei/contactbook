@@ -2,7 +2,7 @@
   <v-app>
     <TheHeader />
     <v-main>
-      <v-container>
+      <v-container fluid style="max-width: 800px">
         <router-view></router-view>
       </v-container>
     </v-main>
