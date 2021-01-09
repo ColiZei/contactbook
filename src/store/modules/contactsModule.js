@@ -11,8 +11,8 @@ export default {
     }
   },
   actions: {
-    loadContacts(context) {
-      const contacts = [
+    loadContacts(context, payload) {
+      const allContacts = [
         {
           id: 1,
           favorite: true,
@@ -91,10 +91,20 @@ export default {
         }
       ];
 
+      let contacts = [];
+      if (payload > 0) {
+        contacts = allContacts.filter(contact => contact.id == payload);
+      } else {
+        contacts = allContacts;
+      }
+
       context.commit('setContacts', contacts);
     }
   },
   getters: {
+    getContactForDetail(state) {
+      return state.contacts;
+    },
     getContacts(state) {
       const allContacts = {};
       const favoriteContacts = state.contacts.filter(

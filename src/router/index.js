@@ -7,7 +7,12 @@ Vue.use(VueRouter);
 
 const routes = [
   { path: '/', name: 'Home', component: Home },
-  { path: '/contact/:id', name: 'ContactDetail', component: Contact },
+  {
+    path: '/contact/:id',
+    name: 'ContactDetail',
+    props: true,
+    component: Contact
+  },
   {
     path: '/new/',
     name: 'NewContact',
